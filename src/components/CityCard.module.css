@@ -1,0 +1,87 @@
+.card {
+  display: block;
+  background: rgba(245,240,232,0.04);
+  border: 1px solid rgba(245,240,232,0.08);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  text-decoration: none;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(196,80,42,0.35);
+  box-shadow: 0 16px 48px rgba(0,0,0,0.2);
+}
+
+.imgWrap {
+  position: relative;
+  height: 170px;
+  overflow: hidden;
+}
+.imgWrap img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  filter: brightness(0.85) saturate(0.9);
+  transition: transform 0.5s ease, filter 0.3s ease;
+}
+.card:hover .imgWrap img {
+  transform: scale(1.06);
+  filter: brightness(0.95) saturate(1.05);
+}
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(26,22,18,0.5) 0%, transparent 60%);
+}
+
+.body { padding: 1.2rem; }
+
+.name {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  font-weight: 400;
+  color: var(--cream);
+  margin-bottom: 0.75rem;
+}
+
+.pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 1rem;
+}
+
+.pill {
+  font-size: 0.68rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  padding: 0.18rem 0.55rem;
+  border-radius: 1px;
+  font-weight: 500;
+}
+.tagSage { background: rgba(90,122,90,0.25); color: #8fbf8f; }
+.tagRust { background: rgba(196,80,42,0.22); color: var(--rust-light); }
+.tagGold { background: rgba(180,150,80,0.2); color: #c8a86a; }
+
+.stats {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid rgba(245,240,232,0.08);
+  padding-top: 0.85rem;
+}
+.stats div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+.stats strong {
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: rgba(245,240,232,0.85);
+}
+.stats span {
+  font-size: 0.7rem;
+  color: rgba(245,240,232,0.4);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}

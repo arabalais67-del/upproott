@@ -1,0 +1,113 @@
+.nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.4rem 4rem;
+  transition: background 0.3s ease, box-shadow 0.3s ease, padding 0.3s ease;
+}
+
+.scrolled {
+  background: rgba(245, 240, 232, 0.95);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 1px 0 var(--sand);
+  padding: 1rem 4rem;
+}
+
+.logo {
+  font-family: var(--font-serif);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--cream);
+  letter-spacing: -0.02em;
+  transition: color 0.3s;
+  text-decoration: none;
+}
+
+.logo span { color: var(--rust-light); }
+
+.scrolled .logo { color: var(--ink); }
+.scrolled .logo span { color: var(--rust); }
+
+.links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.link {
+  font-size: 0.88rem;
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  color: rgba(245,240,232,0.8);
+  transition: color 0.2s;
+  text-decoration: none;
+}
+.scrolled .link { color: var(--warm-gray); }
+.link:hover, .scrolled .link:hover { color: var(--ink); }
+
+.cta {
+  font-size: 0.88rem;
+  font-weight: 500;
+  background: var(--ink);
+  color: var(--cream) !important;
+  padding: 0.5rem 1.3rem;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  transition: background 0.2s, transform 0.2s;
+}
+.cta:hover { background: var(--rust); transform: translateY(-1px); }
+
+/* Hamburger */
+.burger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  padding: 6px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.burgerLine {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--cream);
+  border-radius: 2px;
+  transition: all 0.3s;
+}
+.scrolled .burgerLine { background: var(--ink); }
+
+@media (max-width: 768px) {
+  .nav { padding: 1.2rem 1.5rem; }
+  .scrolled { padding: 1rem 1.5rem; }
+
+  .burger { display: flex; }
+
+  .links {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: var(--ink);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5rem;
+    z-index: 99;
+  }
+  .links.open { display: flex; }
+
+  .link {
+    font-size: 1.4rem;
+    color: var(--cream);
+  }
+  .scrolled .link { color: var(--cream); }
+
+  .cta {
+    font-size: 1.1rem;
+    padding: 0.8rem 2.5rem;
+  }
+}
